@@ -1,0 +1,7 @@
+# Netlify publishes the unified website from this GitHub repository.
+# Git connection: chill-lichen/Public, production branch: main.
+# Plain HTML/CSS/JS: no build command, package install, or framework needed.
+[build]
+  publish = "docs/unified"
+
+# Don't redirect all routes to index.html: this is a real multi-page site.
