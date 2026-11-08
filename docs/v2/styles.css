@@ -124,3 +124,16 @@ footer{padding:34px 0 45px;border-top:1px solid #dedfdf;background:#fbfaf6;color
 @media(max-width:790px){.wrap{width:min(100% - 38px,1190px)}.navlinks a:not(.navcta){display:none}.hero{padding:55px 0 65px}.herogrid,.split,.aboutgrid{grid-template-columns:1fr}.herogrid{gap:46px}h1{font-size:clamp(48px,9vw,68px)}.dashboard-figure{max-width:650px}.problemgrid,.offergrid,.steps{grid-template-columns:1fr}.problem{min-height:unset}.problem::after{margin-top:20px;top:0}.section{padding:72px 0}.sectionheading{margin-bottom:27px}.offer{padding:20px 0 13px}.ctapanel{display:block;padding:43px 33px}.ctapanel .button{margin-top:12px}}
 @media(max-width:470px){h1{font-size:47px}.hero .intro{font-size:15px}.navlinks .navcta{font-size:11px;padding:10px 11px}.brand strong{font-size:11px}.brand small{font-size:9px}.heroactions .button{width:100%}.metric strong{font-size:15px}.metric{min-height:77px;padding:10px 8px}.dashbody{padding:14px 11px}.dashfoot{padding:12px;gap:9px}.dashnote{font-size:9px}.source{padding:10px;gap:6px}.source strong{font-size:10px}.source small{font-size:8px}.sourceicon{width:25px;height:25px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
+
+/* Evidence-led About section */
+.linkedinline{font-size:13px!important;margin-top:23px;color:#e9eff9!important}
+.linkedinline a{color:#d0dcff;font-weight:720;text-underline-offset:4px}
+.aboutcard{background:#293953}
+.proofstat{padding:22px 0;border-bottom:1px solid #66748b63;display:flex;flex-direction:column;gap:8px}
+.proofstat strong{display:block;font:500 clamp(41px,4.4vw,60px)/1.0 Georgia,serif;color:#fff;letter-spacing:-.055em}
+.proofstat strong em{font-size:.48em;font-style:normal;letter-spacing:-.02em;color:#bfd0f5}
+.proofstat span{font-size:12px;line-height:1.6;color:#cbd6e9;max-width:280px}
+.proofline{height:1px;background:#4b5e7a;margin:22px 0 13px;display:none}
+.aboutcard p{font-size:11px;color:#adbed4;line-height:1.65}
+.linkedinproof{color:#d4e0ff;font-size:12px;font-weight:740;display:inline-block;margin-top:15px;text-underline-offset:4px}
+@media(max-width:790px){.proofstat{padding:18px 0}}
