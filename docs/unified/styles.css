@@ -56,3 +56,10 @@ footer{border-top:1px solid #dde0df;background:#fbfaf6;padding:34px 0 46px}.foot
 @media(max-width:760px){.wrap,.readwrap{width:min(100% - 34px,1160px)}.topbar{min-height:73px}.primarynav{gap:8px}.primarynav a:not(.contactnav){display:none}.hero{padding:51px 0 62px}.herogrid,.split,.bio-layout,.contactgrid{grid-template-columns:1fr}.herogrid{gap:47px}.section{padding:65px 0}.three,.steps{grid-template-columns:1fr}.proof-strip{grid-template-columns:1fr;gap:1px}.cta-panel{display:block;padding:38px 27px}.cta-panel .button{margin-top:11px}.pagehero{padding:55px 0 43px}.demo-split{grid-template-columns:1fr}.sectionhead h2{font-size:38px}}
 @media(max-width:475px){.hero h1,.pagehero h1{font-size:47px}.hero .lead,.pagehero .lead{font-size:16px}.minimetric strong{font-size:15px}.sample-preview{padding:14px}.demo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.demo-metric{padding:12px}.demo-metric strong{font-size:27px}.service{grid-template-columns:1fr;padding:23px}.servicegrid{grid-template-columns:1fr}.actions .button{width:100%}.stat-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
+/* Small-screen navigation and selected sample data rows */
+.mobilemenu{display:none;position:relative}.mobilemenu summary{list-style:none;cursor:pointer;font-weight:760;font-size:12px;padding:9px 12px;background:#fff;border:1px solid #cbd3de;border-radius:7px}.mobilemenu summary::-webkit-details-marker{display:none}
+.mobilelinks{display:grid;gap:2px;position:absolute;right:0;top:42px;width:230px;border:1px solid #dce1e9;border-radius:9px;background:#fff;box-shadow:0 13px 32px #1b243524;padding:8px;z-index:40}
+.mobilelinks a{font-size:13px;font-weight:700;padding:9px 11px;text-decoration:none;border-radius:5px;color:var(--ink)}.mobilelinks a:hover{background:var(--light)}
+.demo-table tr.selected-row td{background:#ecf1fb;color:#213961;font-weight:680}
+.policy .eyebrow{color:var(--blue)}
+@media(max-width:760px){.mobilemenu{display:block}.primarynav{margin-left:auto}}
