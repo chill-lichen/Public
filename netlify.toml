@@ -5,3 +5,7 @@
   publish = "docs/unified"
 
 # Don't redirect all routes to index.html: this is a real multi-page site.
+
+# Keep URLs consistent across canonical tags, site links, and sitemap.
+[build.processing.html]
+  pretty_urls = true
