@@ -113,3 +113,15 @@ footer{border-top:1px solid #dde0df;background:#fbfaf6;padding:34px 0 46px}.foot
 @media(max-width:940px){.personal-intro-grid{grid-template-columns:minmax(0,1fr) minmax(275px,.85fr);gap:35px}.personal-interests{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:760px){.personal-hero{padding:56px 0 68px}.personal-intro-grid{grid-template-columns:1fr}.places-card{max-width:550px}.personal-hero h1{font-size:65px;margin-bottom:22px}.personal-section-heading{margin-bottom:32px}.personal-timeline:before{left:110px}.personal-timeline li{grid-template-columns:95px 1fr;gap:35px}.personal-timeline li:before{left:105px}.timeline-turn .timeline-details{margin:-12px -8px 12px;padding:17px 15px}}
 @media(max-width:490px){.personal-hero h1{font-size:53px}.personal-hero .personal-lede{font-size:25px}.personal-timeline:before{left:6px;top:8px;bottom:42px}.personal-timeline li{display:block;padding-left:28px;padding-bottom:29px}.personal-timeline li:before{left:1px;top:5px}.timeline-date{text-align:left;padding:0 0 10px}.timeline-details{padding-bottom:20px}.timeline-details h3{font-size:24px}.timeline-turn .timeline-details{margin:0 0 10px}.personal-interests{grid-template-columns:1fr 1fr;gap:26px 19px}.interest h3{font-size:23px}.interest p{font-size:12px}}
+
+/* Home: evidence-based editorial card rather than fabricated portfolio figures */
+.career-preview{background:var(--ink);color:#f5f3ec;border-radius:16px;padding:clamp(27px,4.2vw,47px);box-shadow:0 21px 55px #18233820}
+.career-preview .eyebrow{color:#a9beed}
+.career-preview h2{font-size:clamp(29px,3.3vw,43px);line-height:1.15;margin:17px 0 26px;color:white}
+.career-preview ol{padding:0;margin:0 0 23px;list-style:none;counter-reset:experience}
+.career-preview li{counter-increment:experience;border-top:1px solid #ffffff28;position:relative;padding:18px 0 18px 38px}
+.career-preview li:before{content:"0" counter(experience);position:absolute;left:0;top:21px;font-size:10px;color:#aebbd0;font-weight:800;letter-spacing:.05em}
+.career-preview li span{display:block;font-size:15px;font-weight:690;color:#fff}
+.career-preview li small{display:block;margin-top:3px;font-size:11px;color:#bcc8d8;letter-spacing:.01em}
+.career-preview>a{font-size:12px;font-weight:760;color:#c6d7ff}
+@media(max-width:760px){.career-preview{max-width:610px}.career-preview h2{font-size:34px}}
