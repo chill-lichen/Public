@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://raviyeleswarapu.org/sitemap.xml
