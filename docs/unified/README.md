@@ -7,10 +7,10 @@
 
 ## Published pages
 
-- Home — owner-led reporting and workflow services, with real professional background
-- Services — current offer for small service businesses
+- Home — paraplanning and bookkeeping support for independent financial advisors, with real professional background
+- Services — paraplanning, business-owner client preparation (CEPA), and practice bookkeeping, all under the advisor's supervision
 - About — concise personal history, work experience, ventures and interests
-- Contact — links to the external Notion project intake and direct email
+- Contact — links to the external Notion intake and direct email; asks advisors not to send client information
 - Privacy Policy and Terms — data use, consent and website terms
 
 No "Sample Work" or invented client portfolio is published. A fictional portfolio demonstration and its CSV were deliberately removed because it could imply a past commercial engagement.
@@ -28,7 +28,7 @@ No "Sample Work" or invented client portfolio is published. A fictional portfoli
 - Public `sitemap.xml` lists the remaining six pages.
 - `robots.txt` points to the sitemap; canonical links use `https://raviyeleswarapu.org/`.
 - Historical `/work` and `/work.html` links redirect to `/services/` through `netlify.toml`.
-- GitHub Pages automatic deployment is disabled.
+- GitHub Pages automatic deployment is disabled. `docs/privacy.html` and `docs/terms.html` are redirect stubs to the current policies, so a manual Pages run can't publish outdated policies.
 - No visitor analytics or advertising trackers are installed on the production website.
 - The external Notion project inquiry is not an SMS consent form.
 
@@ -37,6 +37,9 @@ No "Sample Work" or invented client portfolio is published. A fictional portfoli
 - Don't invent testimonials, business results, client case studies or credentials.
 - Clearly attribute NXT Capital and BMO outcome claims to prior employment.
 - No direct claims of offering regulated securities, investment planning, tax, audit, formal valuation or brokerage services without appropriate authorization and updated legal language.
+- Ravi is not a registered investment adviser or IAR (no Series 65, no Form ADV). Frame all paraplanning as support prepared for, and reviewed by, the engaging advisor, who remains responsible for advice. Keep the footer disclaimer saying so.
+- Bookkeeping means the advisory firm's own books. It does not include tax preparation.
+- The 2026 ventures (travel, insurance, brokerage) are closed. Don't promote them.
 - Keep published copy first-person, specific, and accurate. Archive outdated offerings rather than leaving broken links.
 - Preserve Cloudflare MX, SPF, DKIM, and DMARC email records when adjusting website DNS.
 
