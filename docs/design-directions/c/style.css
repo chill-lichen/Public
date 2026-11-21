@@ -364,3 +364,4 @@ input:focus, select:focus, textarea:focus { border-color: var(--ink); box-shadow
   .c-hero .hero-side { order: 2; }
   .sheet figcaption { transform: none; }
 }
+.stage-head p { max-width: 40ch; }

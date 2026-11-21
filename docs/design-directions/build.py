@@ -2,38 +2,38 @@
 
 Run:  python3 docs/design-directions/build.py
 Output: docs/design-directions/{a,b}/{index,services,about,contact}.html
-Copy follows the advisor-support rewrite (PR #1). Plain static HTML, no build needed to view.
+Copy: fractional data executive positioning (2026-11-21). A and B pages keep the older advisor copy. Plain static HTML, no build needed to view.
 """
 from pathlib import Path
 
 ROOT = Path(__file__).parent
 CTA = "Start intake &amp; book a meeting"
-COMPLIANCE = ("Ravi is not a registered investment adviser and does not provide investment advice "
-              "to the public. All services support the advisor&rsquo;s own firm.")
+COMPLIANCE = ("Ravi provides data consulting and fractional data leadership only. He is not a registered investment "
+              "adviser and does not provide investment, legal or tax advice, formal business valuations, or business brokerage.")
 PAGES = [("index", "Home"), ("services", "Services"), ("about", "About"), ("contact", "Contact")]
-TITLES = {"index": "Ravi Yeleswarapu | Back-office support for advisors", "services": "Services | Ravi Yeleswarapu",
+TITLES = {"index": "Ravi Yeleswarapu | Fractional data executive", "services": "Services | Ravi Yeleswarapu",
           "about": "About | Ravi Yeleswarapu", "contact": "Start intake | Ravi Yeleswarapu"}
 
 # ---------------------------------------------------------------- shared copy
 HOURS = [
-    ("Plan prep", "Who builds the plan before the meeting?",
-     "Statements, account details and questionnaires arrive in pieces. Someone has to organize them and get them into your planning software before you can do the real work."),
-    ("Business-owner clients", "Are your owner clients ready to talk about an exit?",
-     "Most owners haven&rsquo;t pulled together what an exit conversation needs. Preparing that groundwork takes time you could spend advising."),
-    ("Your own books", "When were the firm&rsquo;s books last reconciled?",
-     "Fee revenue, expenses and bank accounts drift out of sync while you&rsquo;re busy with clients. Then tax season arrives."),
+    ("Data governance", "Who owns the numbers?",
+     "Definitions differ between teams, access is granted ad hoc, and nobody is sure which report is right. Lenders and buyers notice."),
+    ("Data strategy", "Is the data spend paying off?",
+     "Tools pile up and reports multiply, yet the questions the owners care about still take a week to answer."),
+    ("Integrations &amp; acquisitions", "What happens when systems or companies combine?",
+     "A new vendor, a new platform or an acquisition. Each one is a data project, whether anyone plans it that way or not."),
 ]
 STEPS = [
     ("Pick from the menu", "Choose any services from any stage. Nothing is a package."),
-    ("Fill a short intake", "A few questions about your firm and tools. No client information."),
-    ("Book a meeting", "Thirty minutes to agree scope, data access, timeline and price."),
-    ("You review and sign off", "Everything comes back to you. Nothing reaches a client without your approval."),
+    ("Fill a short intake", "A few questions about your company, systems and timeline. No confidential data."),
+    ("Book a meeting", "Thirty minutes to agree scope, access, timeline and fee."),
+    ("Work in clear phases", "Each phase ends with something you can use: a decision, a document or a working process."),
 ]
 BACKGROUND = [
-    ("Financial planning", "B.S., Financial Counseling &amp; Planning, Purdue"),
     ("Regulation &amp; risk", "Consulting at Capgemini &amp; Capco"),
     ("Data &amp; reporting", "BMO and NXT Capital"),
-    ("Business owners", "Certified Exit Planning Advisor (CEPA)"),
+    ("Product &amp; platforms", "Epsilon, and an MLOps platform at BMO"),
+    ("Owners &amp; exits", "Certified Exit Planning Advisor (CEPA)"),
 ]
 TIMELINE = [
     ("2013&ndash;2017", "Capgemini &amp; Capco", "Consulting in banking regulation, financial risk and compliance."),
@@ -41,16 +41,15 @@ TIMELINE = [
     ("2021&ndash;2022", "Epsilon", "Product management for measurement and reporting."),
     ("2022&ndash;2024", "BMO, again", "Product ownership across data and technology, aligning architects, engineers and the business."),
     ("2024&ndash;2025", "NXT Capital", "Data and reporting. Helped cut a monthly reporting process from five days to one."),
-    ("Now", "Back-office support for advisors", "Paraplanning and bookkeeping for independent advisors. It puts my planning degree and compliance habits to use."),
+    ("Now", "Fractional data executive", "Data governance, strategy and integration work for private companies, including companies preparing to be acquired."),
 ]
 OUTSIDE = [("Reading", "Wodehouse, Tolkien, the Stormlight Archive. Pratchett above all."),
            ("Music", "Guitar and bansuri. Still learning both."),
            ("Games", "Chess regularly; Go, rather less competently."),
            ("Languages", "English, Hindi, Telugu, and very rough Japanese.")]
-SUPERVISION = ("I work as a contractor for your firm, under your direction. You remain responsible for all advice and "
-               "client communication, and nothing I prepare goes to a client without your review. I follow your firm&rsquo;s "
-               "data-security policies and sign your confidentiality agreement. I don&rsquo;t prepare tax returns, perform "
-               "audits, give legal advice, produce formal valuations, or broker business sales.")
+SUPERVISION = ("I work as a fractional executive alongside your leadership team, either a set number of days a month or on a "
+               "defined project. You make the business decisions. I sign your NDA, follow your security policies and work in your "
+               "systems. On a transaction I work alongside your attorneys, accountants and bankers, and I stay in my lane: data.")
 
 INTAKE_FORM = """
 <form novalidate>
@@ -58,16 +57,16 @@ INTAKE_FORM = """
   <fieldset class="f-chips"><legend>Services you picked</legend><div data-chips></div></fieldset>
   <div class="f-row">
     <p class="f"><label for="fname">Your name</label><input id="fname" name="fname" autocomplete="name" required value="Jordan Ellis"></p>
-    <p class="f"><label for="femail">Work email</label><input id="femail" name="femail" type="email" autocomplete="email" required value="jordan@ellisplanning.example"></p>
+    <p class="f"><label for="femail">Work email</label><input id="femail" name="femail" type="email" autocomplete="email" required value="jordan@elliscomponents.example"></p>
   </div>
   <div class="f-row">
-    <p class="f"><label for="ffirm">Firm name</label><input id="ffirm" name="ffirm" autocomplete="organization" value="Ellis Planning Group"></p>
-    <p class="f"><label for="ftype">Your firm is</label><select id="ftype" name="ftype"><option>A solo RIA</option><option selected>A small RIA (2&ndash;10 people)</option><option>An ensemble practice</option><option>Something else</option></select></p>
+    <p class="f"><label for="ffirm">Company name</label><input id="ffirm" name="ffirm" autocomplete="organization" value="Ellis Components"></p>
+    <p class="f"><label for="ftype">Your company is</label><select id="ftype" name="ftype"><option>Privately held, growing</option><option>Investor or PE-backed</option><option selected>Preparing for a sale</option><option>Integrating an acquisition</option><option>Something else</option></select></p>
   </div>
-  <p class="f"><label for="ftools">Planning and accounting software you use <span class="opt">optional</span></label><input id="ftools" name="ftools" placeholder="Your planning software, CRM, accounting software"></p>
-  <p class="f"><label for="fneed">What&rsquo;s piling up?</label><textarea id="fneed" name="fneed" rows="4" required>About 12 annual reviews in Q1 and the data entry is behind. Books are two months out of date.</textarea>
-    <span class="f-note">Please don&rsquo;t include client names, account numbers or statements. We&rsquo;ll agree on a secure way to share data first.</span></p>
-  <p class="f"><label for="fwhen">When would you like help to start?</label><select id="fwhen" name="fwhen"><option>Within two weeks</option><option selected>This month</option><option>Next quarter</option><option>Just exploring</option></select></p>
+  <p class="f"><label for="ftools">Main systems <span class="opt">optional</span></label><input id="ftools" name="ftools" placeholder="ERP, CRM, data warehouse, BI tools"></p>
+  <p class="f"><label for="fneed">What&rsquo;s going on?</label><textarea id="fneed" name="fneed" rows="4" required>We may sell in about 18 months. KPI reporting lives in spreadsheets and nobody agrees on the customer counts.</textarea>
+    <span class="f-note">Please don&rsquo;t include confidential financials or customer data. We&rsquo;ll sign an NDA before anything sensitive is shared.</span></p>
+  <p class="f"><label for="fwhen">When would you like to start?</label><select id="fwhen" name="fwhen"><option>Within two weeks</option><option selected>This month</option><option>Next quarter</option><option>Just exploring</option></select></p>
   <div class="f-actions"><button class="btn btn-primary" type="submit">Continue to scheduling</button><span class="f-step">Step 1 of 2</span></div>
 </form>"""
 
@@ -119,7 +118,7 @@ def nav(page, cls=""):
 # ================================================================ DIRECTION A
 def a_header(page):
     return f"""<header class="masthead"><div class="wrap mast">
-<a class="brand" href="./index.html"><span class="brand-name">Ravi Yeleswarapu</span><span class="brand-sub">Back office for advisors</span></a>
+<a class="brand" href="./index.html"><span class="brand-name">Ravi Yeleswarapu</span><span class="brand-sub">Fractional data executive</span></a>
 <nav class="nav" aria-label="Primary">{nav(page)}<a href="./contact.html" class="nav-contact"{' aria-current="page"' if page == 'contact' else ''}>Contact</a></nav>
 <a class="btn btn-primary btn-sm" data-cta="./contact.html" href="./contact.html">{CTA}</a>
 </div></header>
@@ -131,7 +130,7 @@ def a_footer():
     return f"""</main>
 <footer class="foot"><div class="wrap">
 <div class="foot-top">
-  <p class="foot-big">Paraplanning, owner-client prep and bookkeeping, done for the advisor.</p>
+  <p class="foot-big">Data governance, strategy and integrations for private companies.</p>
   <a class="btn btn-primary" data-cta="./contact.html" href="./contact.html">{CTA}</a>
 </div>
 <div class="foot-grid">
@@ -151,37 +150,37 @@ def a_home():
     bg = "".join(f"<div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in BACKGROUND)
     return f"""
 <section class="hero"><div class="wrap hero-grid">
-  <p class="label hero-label">For independent advisors and small RIAs</p>
-  <h1>More time with clients.<br><em>Less time on prep and&nbsp;books.</em></h1>
+  <p class="label hero-label">For private companies, and companies preparing to be acquired</p>
+  <h1>Senior data leadership, <em>without the full&#8209;time&nbsp;hire.</em></h1>
   <div class="hero-side">
-    <p class="lead">I handle the preparation around your client meetings and the bookkeeping behind your practice. You review everything, and the advice stays&nbsp;yours.</p>
+    <p class="lead">I&rsquo;m a fractional data executive. I set up data governance, shape a strategy your team can actually run, and lead integrations, from choosing a new tool to combining two companies after a&nbsp;deal.</p>
     <div class="actions"><a class="btn btn-primary" data-cta="./contact.html" href="./contact.html">{CTA}</a><a class="btn btn-line" href="./services.html">Browse the service menu</a></div>
   </div>
 </div>
-<div class="wrap"><ul class="ticker" aria-label="Who this is for"><li>Solo advisors</li><li>Small RIAs &amp; ensembles</li><li>Advisors with business-owner clients</li></ul></div>
+<div class="wrap"><ul class="ticker" aria-label="Who this is for"><li>Private companies</li><li>Owners preparing for a sale</li><li>Teams integrating an acquisition</li></ul></div>
 </section>
 
 <section class="sec"><div class="wrap two">
-  <div class="rail"><p class="label">Where the hours go</p></div>
-  <div><h2 class="h2">Work that has to get done, but doesn&rsquo;t need to be done by&nbsp;you.</h2>
+  <div class="rail"><p class="label">Where it shows up</p></div>
+  <div><h2 class="h2">The data questions that land on someone&rsquo;s desk, usually the&nbsp;owner&rsquo;s.</h2>
   <div class="hours">{hours}</div></div>
 </div></section>
 
 <section class="sec sec-ink"><div class="wrap two">
   <div class="rail"><p class="label">How it works</p></div>
-  <div><h2 class="h2">You stay the advisor. I do the&nbsp;preparation.</h2><ol class="steps">{steps}</ol></div>
+  <div><h2 class="h2">You keep the decisions. I bring the&nbsp;structure.</h2><ol class="steps">{steps}</ol></div>
 </div></section>
 
 <section class="sec"><div class="wrap two">
   <div class="rail"><p class="label">Background</p></div>
   <div class="why">
-    <h2 class="h2">I started in regulatory compliance. I&rsquo;m comfortable working inside the&nbsp;rules.</h2>
+    <h2 class="h2">Compliance first, then a decade in data and&nbsp;reporting.</h2>
     <div class="why-cols">
-      <p>My degree is in financial counseling and planning. I spent my first years consulting on banking regulation and risk, then most of a decade in data and reporting. At NXT Capital I helped cut a monthly reporting process from five days to one.</p>
-      <p>Paraplanning as an outside service is new for me, and I&rsquo;d rather say that plainly. Start with one client file or one month of books, and judge the quality before giving me&nbsp;more.</p>
+      <p>I started out consulting on banking regulation and risk, then spent most of a decade in data, reporting and product roles. At NXT Capital I helped cut a monthly reporting process from five days to one. At BMO I worked on reporting automation that removed about 90% of the manual effort.</p>
+      <p>I also hold the Certified Exit Planning Advisor credential, so I know what owners go through before a sale and what a buyer&rsquo;s diligence team will ask for. Start with one defined piece of work and judge it before committing to&nbsp;more.</p>
     </div>
     <dl class="creds">{bg}</dl>
-    <p class="fine">Results named above are from previous employment, not client results for this practice.</p>
+    <p class="fine">Results named above are from previous employment, not results for clients of this practice.</p>
   </div>
 </div></section>
 """
@@ -192,7 +191,7 @@ def a_services():
 <section class="page-head"><div class="wrap two">
   <div class="rail"><p class="label">Services</p></div>
   <div><h1 class="h1">An &agrave; la carte menu, in three&nbsp;stages.</h1>
-  <p class="lead">Pick any items from any stage. Your picks carry into the intake, and we agree scope and price on a call before any work starts.</p></div>
+  <p class="lead">Pick any items from any stage. Your picks carry into the intake, and we agree scope and fee on a call before any work starts.</p></div>
 </div></section>
 <section class="menu-wrap"><div class="wrap">
   <div data-menu="columns" class="menu"></div>
@@ -202,7 +201,7 @@ def a_services():
   <a class="btn btn-primary" data-cta="./contact.html" href="./contact.html">{CTA}</a>
 </div></div>
 <section class="sec"><div class="wrap two">
-  <div class="rail"><p class="label">How the work is supervised</p></div>
+  <div class="rail"><p class="label">How engagements work</p></div>
   <div class="supervise"><p>{SUPERVISION}</p><p class="compliance-box">{COMPLIANCE}</p></div>
 </div></section>
 """
@@ -236,7 +235,7 @@ def a_contact():
 <section class="page-head"><div class="wrap two">
   <div class="rail"><p class="label">Contact</p></div>
   <div><h1 class="h1">Start intake, then book a&nbsp;meeting.</h1>
-  <p class="lead">Two short steps. Tell me about your firm and what you&rsquo;d hand off, then pick a time to talk.</p></div>
+  <p class="lead">Two short steps. Tell me about your company and what&rsquo;s going on with its data, then pick a time to talk.</p></div>
 </div></section>
 <section class="sec sec-tight"><div class="wrap two">
   <div class="rail"><ol class="progress" data-progress><li class="is-current"><span>01</span> Intake</li><li><span>02</span> Schedule</li><li><span>03</span> Done</li></ol></div>
@@ -384,19 +383,19 @@ def b_contact():
 
 # ================================================================ DIRECTION C (A's structure, warmer details)
 PREP_SHEET = """
-<figure class="sheet" aria-label="Illustration of a prepared client file">
-  <div class="sheet-tab">Annual review &middot; Client file 014</div>
+<figure class="sheet" aria-label="Illustration of a data workstream checklist">
+  <div class="sheet-tab">Sale readiness &middot; Data workstream</div>
   <div class="sheet-body">
-    <p class="sheet-kicker">Prepared for the advisor</p>
-    <p class="sheet-title">Review prep checklist</p>
+    <p class="sheet-kicker">Prepared for the leadership team</p>
+    <p class="sheet-title">Diligence data checklist</p>
     <ul class="sheet-list">
-      <li class="ok"><span>Statements &amp; questionnaire gathered</span><em>Diagnostic</em></li>
-      <li class="ok"><span>Data entered and checked against source</span><em>Prescription</em></li>
-      <li class="ok"><span>Scenarios you specified, side by side</span><em>Prescription</em></li>
-      <li class="ok"><span>Meeting packet in your template</span><em>Prescription</em></li>
-      <li class="todo"><span>Advisor review and sign-off</span><em>You</em></li>
+      <li class="ok"><span>An owner named for each core system</span><em>Governance</em></li>
+      <li class="ok"><span>KPI definitions written and agreed</span><em>Governance</em></li>
+      <li class="ok"><span>Data roadmap approved by leadership</span><em>Strategy</em></li>
+      <li class="ok"><span>Vendors, contracts and integrations mapped</span><em>Integration</em></li>
+      <li class="todo"><span>Data room reporting pack</span><em>In progress</em></li>
     </ul>
-    <div class="sheet-foot"><span class="stamp">Ready for your review</span><span class="sheet-books">Firm books: closed through October</span></div>
+    <div class="sheet-foot"><span class="stamp">On track for diligence</span><span class="sheet-books">Next: leadership review</span></div>
   </div>
   <figcaption>Illustration, not a client record.</figcaption>
 </figure>"""
@@ -425,6 +424,8 @@ DIRS = {
 }
 
 for d, (hdr, ftr, bodies) in DIRS.items():
+    if d != "c":
+        continue  # A and B were rejected; their pages stay on disk as visual references only
     for slug, fn in bodies.items():
         (ROOT / d / f"{slug}.html").write_text(head(d, slug) + hdr(slug) + fn() + ftr(), encoding="utf-8")
 print("built", sum(len(b[2]) for b in DIRS.values()), "pages")

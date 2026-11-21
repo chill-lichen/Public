@@ -4,26 +4,26 @@
   "use strict";
 
   var STAGES = [
-    { key: "diagnostic", n: "1", name: "Diagnostic", line: "Understand the situation", body: "Get the facts in one place before anyone builds anything." },
-    { key: "prescription", n: "2", name: "Prescription", line: "Prepare the plan materials", body: "Turn your direction into review-ready drafts." },
-    { key: "operation", n: "3", name: "Operation", line: "Keep things running", body: "Ongoing upkeep, month after month." }
+    { key: "diagnostic", n: "1", name: "Diagnostic", line: "Understand the situation", body: "Find out what you have, who owns it, and where the risk is." },
+    { key: "prescription", n: "2", name: "Prescription", line: "Design the plan", body: "Decide what to do, in what order, and what it costs." },
+    { key: "operation", n: "3", name: "Operation", line: "Run and sustain it", body: "Ongoing leadership and upkeep, month after month." }
   ];
 
   var SERVICES = [
-    { id: "d-gather", stage: "diagnostic", title: "Client data gathering", desc: "I collect statements, account details and questionnaires, then organize them into one clean client file.", get: "An organized file and a list of what's still missing" },
-    { id: "d-snapshot", stage: "diagnostic", title: "Household snapshot", desc: "A summary of balance sheet and cash flow, built from the data you provide, so you start the meeting knowing the picture.", get: "A one-page summary for your review" },
-    { id: "d-owner", stage: "diagnostic", title: "Business-owner readiness review", tag: "CEPA", desc: "I gather what an exit or succession conversation depends on: financials, ownership details, and readiness answers.", get: "Organized business financials and a gaps list" },
-    { id: "d-books", stage: "diagnostic", title: "Firm books check-up", desc: "A look at your practice's own books: what's reconciled, what's behind, and what's miscategorized.", get: "A short status note and a catch-up estimate" },
+    { id: "d-assess", stage: "diagnostic", title: "Data maturity assessment", desc: "Interviews plus a review of your systems, reports and processes, measured against what a company your size actually needs.", get: "A short findings report and a priority list" },
+    { id: "d-gov", stage: "diagnostic", title: "Governance health check", desc: "Who owns which data, how definitions and access are handled, and where the risk sits.", get: "A gap list with owners and quick wins" },
+    { id: "d-stack", stage: "diagnostic", title: "Systems & vendor inventory", desc: "A map of your tools, vendors, integrations and what they cost.", get: "One picture of the stack and its spend" },
+    { id: "d-ready", stage: "diagnostic", title: "Sale-readiness data review", tag: "CEPA", desc: "I look at your data the way a buyer's diligence team will: reporting, KPIs, customer data and documentation.", get: "A readiness gap list well before a sale" },
 
-    { id: "p-entry", stage: "prescription", title: "Planning software entry", desc: "I enter client data into your planning software and check it against the source documents.", get: "A client file that's ready to model" },
-    { id: "p-scenarios", stage: "prescription", title: "Scenario runs", desc: "I run the scenarios you specify and lay the outputs side by side.", get: "Draft outputs for your review" },
-    { id: "p-packet", stage: "prescription", title: "Meeting packet", desc: "Plan outputs, agenda and supporting pages, assembled in your template.", get: "A review-ready packet" },
-    { id: "p-owner", stage: "prescription", title: "Owner discussion materials", tag: "CEPA", desc: "Draft materials for an exit or succession conversation, for you and the client's other professionals.", get: "Draft pages for you to review and edit" },
+    { id: "p-strategy", stage: "prescription", title: "Data strategy & roadmap", desc: "Priorities tied to business goals and sequenced over the next 12 to 18 months.", get: "A roadmap and budget your leadership can approve" },
+    { id: "p-gov", stage: "prescription", title: "Governance framework", desc: "Roles, data definitions, access rules and policies, sized for a private company rather than a bank.", get: "A working framework and a starter data dictionary" },
+    { id: "p-vendor", stage: "prescription", title: "Tool & vendor selection", desc: "Use-case analysis, requirements, a shortlist and a fair evaluation of new tools or vendors.", get: "A recommendation with the trade-offs written down" },
+    { id: "p-integration", stage: "prescription", title: "Acquisition integration plan", desc: "For a merger or acquisition: how systems, data and reporting will come together, and in what order.", get: "A sequenced integration plan with its risks" },
 
-    { id: "o-books", stage: "operation", title: "Monthly bookkeeping & close", desc: "I categorize transactions, reconcile bank and card accounts, and close each month.", get: "Reconciled books and a short note on anything unusual" },
-    { id: "o-fees", stage: "operation", title: "Fee revenue tie-out", desc: "Advisory fee revenue tied back to your billing or custodian reports.", get: "A monthly reconciliation" },
-    { id: "o-followup", stage: "operation", title: "Meeting follow-up & CRM upkeep", desc: "Notes, task lists and CRM entries after each client meeting.", get: "An up-to-date CRM" },
-    { id: "o-cpa", stage: "operation", title: "Year-end CPA package", desc: "Organized records for your CPA at year end. Tax preparation is not included.", get: "One tidy package for your CPA" }
+    { id: "o-lead", stage: "operation", title: "Fractional data leadership", desc: "A set number of days a month as your data lead: priorities, team guidance and vendor management.", get: "A senior data lead without a full-time hire" },
+    { id: "o-gov", stage: "operation", title: "Governance upkeep", desc: "I run the data council and keep definitions and access reviews current.", get: "Governance that keeps working after rollout" },
+    { id: "o-integration", stage: "operation", title: "Integration oversight", desc: "Oversight of vendors and teams through a migration or a post-deal integration.", get: "Regular status, with issues raised early" },
+    { id: "o-dataroom", stage: "operation", title: "KPI & data room upkeep", desc: "KPI reporting and diligence documentation kept current while a sale is in play.", get: "Answers ready when the buyer asks" }
   ];
 
   var KEY = "ry-mockup-selection";
