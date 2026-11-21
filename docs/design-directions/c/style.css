@@ -297,3 +297,70 @@ input:focus, select:focus, textarea:focus { border-color: var(--ink); box-shadow
 .timeline li:last-child .tl-year { color: var(--gold); }
 @media (max-width: 980px) { .stage-head { min-height: 0; } }
 @media (max-width: 640px) { .brand-name { font-size: 18px; } .masthead .btn-sm { font-size: 11px; padding: 0 8px; } }
+
+/* ---- C, round 2: more warmth and character (same fonts and base colors) ---- */
+:root { --parchment: #f2ebdd; --brass-tint: rgba(168, 137, 74, .26); --oxblood-tint: rgba(140, 29, 38, .08); }
+.hero { background: var(--parchment); padding-bottom: 0; }
+.c-hero .hero-label { border-top-color: #d9cfbb; }
+.c-hero { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); column-gap: 64px; row-gap: 40px; align-items: start; }
+.c-hero .hero-label { grid-column: 1 / -1; }
+.c-hero h1 { grid-column: 1; }
+.c-hero .sheet { grid-column: 2; grid-row: 2 / span 2; align-self: end; }
+.c-hero .hero-side { grid-column: 1; grid-template-columns: 1fr; gap: 24px; border-top-color: #d9cfbb; }
+.hero h1 em { color: var(--ink); font-style: italic; background: linear-gradient(180deg, transparent 62%, var(--brass-tint) 62%, var(--brass-tint) 92%, transparent 92%); padding: 0 .06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.hero .wrap:last-child { padding-bottom: 0; }
+.ticker { margin-top: 56px; border-color: #d9cfbb; color: #4d4a44; }
+.ticker li::before { color: var(--red); }
+
+/* The prep sheet: a paper document, drawn in CSS */
+.sheet { margin: 0; position: relative; transform: rotate(1.2deg); }
+.sheet-tab { display: inline-block; background: var(--ink); color: #efe9dc; font: 600 11px/1 var(--body); letter-spacing: .06em; text-transform: uppercase; padding: 9px 14px 8px; border-radius: 4px 4px 0 0; }
+.sheet-body { background: #fffdf8; border: 1px solid #ddd3c0; border-radius: 0 4px 4px 4px; padding: 24px 24px 20px; box-shadow: 0 1px 0 #e8dfcc, 0 18px 40px -18px rgba(60, 45, 20, .35); }
+.sheet-kicker { font: 600 11px/1 var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin: 0 0 6px; }
+.sheet-title { font: 500 24px/1.2 var(--display); margin: 0 0 14px; }
+.sheet-list { list-style: none; margin: 0; padding: 0; display: grid; }
+.sheet-list li { display: grid; grid-template-columns: 20px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 7px 0; font-size: 14px; border-bottom: 1px dashed #e2d9c6; }
+.sheet-list li::before { content: ""; width: 16px; height: 16px; border: 1px solid #9d998f; border-radius: 3px; background: #fff; }
+.sheet-list li.ok::before { background: var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%23fbfaf7' stroke-width='2'/%3E%3C/svg%3E") center / 14px no-repeat; border-color: var(--ink); }
+.sheet-list li.todo span { color: var(--red); font-weight: 600; }
+.sheet-list em { font-style: normal; font-size: 11px; font-weight: 600; letter-spacing: .04em; color: #8a857a; }
+.sheet-foot { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; margin-top: 18px; }
+.stamp { display: inline-block; font: 700 11px/1 var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--red); border: 1.5px solid var(--red); border-radius: 3px; padding: 7px 10px; transform: rotate(-3deg); background: var(--oxblood-tint); }
+.sheet-books { font-size: 12px; color: var(--grey); }
+.sheet figcaption { font-size: 11px; color: #8a857a; margin-top: 10px; transform: rotate(-1.2deg); }
+
+/* Warm bands */
+.sec-warm { background: var(--parchment); }
+.sec-warm .hour + .hour, .sec-warm .creds div + div, .sec-warm .timeline li { border-color: #ddd2bd; }
+.sec-warm .compliance-box { background: #fffdf8; }
+.page-head { background: var(--parchment); border-bottom-color: #ddd2bd; }
+.sec-warm + .sec, .sec + .sec-warm { border-top-color: #ddd2bd; }
+.hours { border-top: 2px solid var(--ink); }
+.hour .label { color: var(--red); }
+.creds { border-top: 2px solid var(--ink); }
+
+/* How it works: brass numerals, oxblood first step */
+.step-n { color: var(--gold); }
+.steps li:first-child .step-n { color: #e07a80; }
+
+/* Service stages: each stage gets its own accent */
+.stage-head { border-bottom: 0; position: relative; padding-top: 0; }
+.stage-head::after { content: ""; display: block; height: 3px; margin-top: 20px; background: var(--stage, var(--ink)); }
+.stage:nth-child(1) { --stage: var(--gold); }
+.stage:nth-child(2) { --stage: var(--red); }
+.stage:nth-child(3) { --stage: var(--ink); }
+.stage-n { color: var(--stage); }
+.svc:has(input:checked) { border-color: var(--stage, var(--ink)); background: #fffdf8; box-shadow: inset 3px 0 0 var(--stage, var(--ink)); }
+.svc:has(input:checked) .svc-check { background: var(--stage, var(--ink)); border-color: var(--stage, var(--ink)); }
+
+/* Footer: a touch of warmth */
+.foot-big { color: #f3ede0; }
+.foot-big::after { content: ""; display: block; width: 56px; height: 3px; background: var(--gold); margin-top: 20px; }
+
+@media (max-width: 980px) {
+  .c-hero { grid-template-columns: 1fr; }
+  .c-hero .sheet, .c-hero h1, .c-hero .hero-side { grid-column: 1; grid-row: auto; }
+  .c-hero .sheet { order: 3; transform: none; max-width: 460px; }
+  .c-hero .hero-side { order: 2; }
+  .sheet figcaption { transform: none; }
+}

@@ -382,9 +382,45 @@ def b_contact():
 """
 
 
+# ================================================================ DIRECTION C (A's structure, warmer details)
+PREP_SHEET = """
+<figure class="sheet" aria-label="Illustration of a prepared client file">
+  <div class="sheet-tab">Annual review &middot; Client file 014</div>
+  <div class="sheet-body">
+    <p class="sheet-kicker">Prepared for the advisor</p>
+    <p class="sheet-title">Review prep checklist</p>
+    <ul class="sheet-list">
+      <li class="ok"><span>Statements &amp; questionnaire gathered</span><em>Diagnostic</em></li>
+      <li class="ok"><span>Data entered and checked against source</span><em>Prescription</em></li>
+      <li class="ok"><span>Scenarios you specified, side by side</span><em>Prescription</em></li>
+      <li class="ok"><span>Meeting packet in your template</span><em>Prescription</em></li>
+      <li class="todo"><span>Advisor review and sign-off</span><em>You</em></li>
+    </ul>
+    <div class="sheet-foot"><span class="stamp">Ready for your review</span><span class="sheet-books">Firm books: closed through October</span></div>
+  </div>
+  <figcaption>Illustration, not a client record.</figcaption>
+</figure>"""
+
+
+def c_home():
+    h = a_home()
+    h = h.replace('<div class="wrap hero-grid">', '<div class="wrap hero-grid c-hero">', 1)
+    h = h.replace('<div class="hero-side">', PREP_SHEET + '\n  <div class="hero-side">', 1)
+    h = h.replace('<section class="sec"><div class="wrap two">\n  <div class="rail"><p class="label">Background', '<section class="sec sec-warm"><div class="wrap two">\n  <div class="rail"><p class="label">Background', 1)
+    return h
+
+
+def c_services():
+    return a_services().replace('<section class="sec"><div class="wrap two">\n  <div class="rail"><p class="label">How the work', '<section class="sec sec-warm"><div class="wrap two">\n  <div class="rail"><p class="label">How the work', 1)
+
+
+def c_about():
+    return a_about().replace('<section class="sec sec-rule">', '<section class="sec sec-warm">', 1)
+
+
 DIRS = {
     "a": (a_header, a_footer, {"index": a_home, "services": a_services, "about": a_about, "contact": a_contact}),
-    "c": (a_header, a_footer, {"index": a_home, "services": a_services, "about": a_about, "contact": a_contact}),
+    "c": (a_header, a_footer, {"index": c_home, "services": c_services, "about": c_about, "contact": a_contact}),
     "b": (b_header, b_footer, {"index": b_home, "services": b_services, "about": b_about, "contact": b_contact}),
 }
 
