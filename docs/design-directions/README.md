@@ -1,5 +1,7 @@
 # Design directions (mockups, not live)
 
+**Status (2026-11-21): direction C is the locked design. See DESIGN.md. The copy in all mockups is unapproved placeholder.**
+
 Two contrasting directions for the 4-page advisor site. Open `index.html` to compare them side by side.
 
 - `a/`: stark, editorial. Black and white, red for actions, gold only as a tiny highlight.
