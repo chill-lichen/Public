@@ -87,6 +87,7 @@ DONE = """<p>You&rsquo;re booked for <strong data-when></strong>. I&rsquo;ll rea
 def head(d, page):
     fonts = {
         "a": "family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500",
+        "c": "family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600;700",
         "b": "family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,100;1,9..144,300..600,100&family=Manrope:wght@400;500;600;700",
     }[d]
     return f"""<!doctype html>
@@ -383,6 +384,7 @@ def b_contact():
 
 DIRS = {
     "a": (a_header, a_footer, {"index": a_home, "services": a_services, "about": a_about, "contact": a_contact}),
+    "c": (a_header, a_footer, {"index": a_home, "services": a_services, "about": a_about, "contact": a_contact}),
     "b": (b_header, b_footer, {"index": b_home, "services": b_services, "about": b_about, "contact": b_contact}),
 }
 
