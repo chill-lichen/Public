@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Start intake | Ravi Yeleswarapu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="./style.css">
+<script src="../shared/menu.js" defer></script>
+</head>
+<body class="p-contact">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead"><div class="wrap mast">
+<a class="brand" href="./index.html"><span class="brand-name">Ravi Yeleswarapu</span><span class="brand-sub">Back office for advisors</span></a>
+<nav class="nav" aria-label="Primary"><a href="./index.html">Home</a><a href="./services.html">Services</a><a href="./about.html">About</a><a href="./contact.html" class="nav-contact" aria-current="page">Contact</a></nav>
+<a class="btn btn-primary btn-sm" data-cta="./contact.html" href="./contact.html">Start intake &amp; book a meeting</a>
+</div></header>
+<main id="main">
+
+<section class="page-head"><div class="wrap two">
+  <div class="rail"><p class="label">Contact</p></div>
+  <div><h1 class="h1">Start intake, then book a&nbsp;meeting.</h1>
+  <p class="lead">Two short steps. Tell me about your firm and what you&rsquo;d hand off, then pick a time to talk.</p></div>
+</div></section>
+<section class="sec sec-tight"><div class="wrap two">
+  <div class="rail"><ol class="progress" data-progress><li class="is-current"><span>01</span> Intake</li><li><span>02</span> Schedule</li><li><span>03</span> Done</li></ol></div>
+  <div class="intake" data-intake data-services-href="./services.html">
+    <div data-step="1"><h2 class="h3">Intake</h2>
+<form novalidate>
+  <p class="mock-note mock-top">Mockup. The fields below are filled with example answers so you can click straight through.</p>
+  <fieldset class="f-chips"><legend>Services you picked</legend><div data-chips></div></fieldset>
+  <div class="f-row">
+    <p class="f"><label for="fname">Your name</label><input id="fname" name="fname" autocomplete="name" required value="Jordan Ellis"></p>
+    <p class="f"><label for="femail">Work email</label><input id="femail" name="femail" type="email" autocomplete="email" required value="jordan@ellisplanning.example"></p>
+  </div>
+  <div class="f-row">
+    <p class="f"><label for="ffirm">Firm name</label><input id="ffirm" name="ffirm" autocomplete="organization" value="Ellis Planning Group"></p>
+    <p class="f"><label for="ftype">Your firm is</label><select id="ftype" name="ftype"><option>A solo RIA</option><option selected>A small RIA (2&ndash;10 people)</option><option>An ensemble practice</option><option>Something else</option></select></p>
+  </div>
+  <p class="f"><label for="ftools">Planning and accounting software you use <span class="opt">optional</span></label><input id="ftools" name="ftools" placeholder="Your planning software, CRM, accounting software"></p>
+  <p class="f"><label for="fneed">What&rsquo;s piling up?</label><textarea id="fneed" name="fneed" rows="4" required>About 12 annual reviews in Q1 and the data entry is behind. Books are two months out of date.</textarea>
+    <span class="f-note">Please don&rsquo;t include client names, account numbers or statements. We&rsquo;ll agree on a secure way to share data first.</span></p>
+  <p class="f"><label for="fwhen">When would you like help to start?</label><select id="fwhen" name="fwhen"><option>Within two weeks</option><option selected>This month</option><option>Next quarter</option><option>Just exploring</option></select></p>
+  <div class="f-actions"><button class="btn btn-primary" type="submit">Continue to scheduling</button><span class="f-step">Step 1 of 2</span></div>
+</form></div>
+    <div data-step="2" hidden><h2 class="h3">Schedule</h2>
+<p class="sched-lead">Thanks, <span data-who>there</span>. Pick a time for a 30-minute call.</p>
+<div class="sched">
+  <div><p class="sched-label">Day</p><div class="days" data-days></div></div>
+  <div><p class="sched-label">Time (Pacific)</p><div class="times" data-times></div></div>
+</div>
+<p class="mock-note">Mockup. In the live site this step would show a real scheduling tool. These times are placeholders.</p>
+<div class="f-actions"><button class="btn btn-primary" type="button" data-confirm disabled>Confirm meeting</button><button class="btn btn-quiet" type="button" data-back>Back to intake</button><span class="f-step">Step 2 of 2</span></div></div>
+    <div data-step="done" hidden><h2 class="h3">See you then.</h2><p>You&rsquo;re booked for <strong data-when></strong>. I&rsquo;ll read your intake before we talk and come with questions, not a pitch.</p>
+<p class="mock-note">Mockup. No email has been sent and no meeting has been created.</p></div>
+    <aside class="alt"><p class="label">Rather send an email?</p><p><span class="mono">info@raviyeleswarapu.org</span>. A few sentences about the problem are enough.</p></aside>
+  </div>
+</div></section>
+</main>
+<footer class="foot"><div class="wrap">
+<div class="foot-top">
+  <p class="foot-big">Paraplanning, owner-client prep and bookkeeping, done for the advisor.</p>
+  <a class="btn btn-primary" data-cta="./contact.html" href="./contact.html">Start intake &amp; book a meeting</a>
+</div>
+<div class="foot-grid">
+  <p class="foot-legal"><span class="label">Compliance</span>Ravi is not a registered investment adviser and does not provide investment advice to the public. All services support the advisor&rsquo;s own firm.</p>
+  <nav class="foot-nav" aria-label="Footer"><a href="./index.html">Home</a><a href="./services.html">Services</a><a href="./about.html">About</a><a href="./contact.html">Contact</a><a href="https://www.linkedin.com/in/ryeleswa">LinkedIn</a></nav>
+  <p class="foot-meta">&copy; <span data-year>2026</span> Ravi Yeleswarapu<br>Vancouver, WA &middot; working remotely<br>No analytics or ad trackers.</p>
+</div>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<title>Advisor Site Directions</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex">
+<style>
+/* Compare viewer: a thin control bar over two live frames, A on the left and B on the right. */
+:root {
+  --bg: #f2f1ee; --panel: #ffffff; --fg: #141414; --muted: #6a6862; --line: #dad8d2; --accent: #c4122f; --gold: #c9a227;
+  --ui: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #121110; --panel: #1c1b19; --fg: #f1efe9; --muted: #a29f97; --line: #34322e; --accent: #e0455c; --gold: #d6b46a; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg: #121110; --panel: #1c1b19; --fg: #f1efe9; --muted: #a29f97; --line: #34322e; --accent: #e0455c; --gold: #d6b46a; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 14px/1.5 var(--ui); }
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--panel); border-bottom: 1px solid var(--line); padding-block: 12px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--panel); }
+.bar h1 { font-size: 15px; font-weight: 700; margin: 0 auto 0 0; }
+.bar h1 span { color: var(--muted); font-weight: 500; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { border: 0; background: transparent; color: var(--fg); font: 600 13px/1 var(--ui); padding: 9px 14px; cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--fg); color: var(--panel); }
+.seg button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.stage { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-block: 16px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.stage[data-show="a"] { grid-template-columns: 1fr; } .stage[data-show="a"] .col-b { display: none; }
+.stage[data-show="b"] { grid-template-columns: 1fr; } .stage[data-show="b"] .col-a { display: none; }
+.col { min-width: 0; display: grid; gap: 8px; }
+.col header { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.col header strong { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.col header span { color: var(--muted); font-size: 13px; }
+.col header a { margin-left: auto; font-size: 13px; color: var(--fg); }
+.tag { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 6px; background: var(--fg); color: var(--panel); font-weight: 800; font-size: 12px; }
+.col-b .tag { background: var(--gold); color: #1a1610; border-radius: 50%; }
+iframe { width: 100%; height: calc(100vh - 140px); min-height: 560px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+.note { color: var(--muted); font-size: 13px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 24px; max-width: 900px; }
+@media (max-width: 900px) { .stage { grid-template-columns: 1fr; } iframe { height: 78vh; } }
+</style>
+
+<div class="bar">
+  <h1>Advisor site directions <span>A vs B</span></h1>
+  <div class="seg" role="group" aria-label="Page">
+    <button type="button" data-page="index" aria-pressed="true">Home</button>
+    <button type="button" data-page="services" aria-pressed="false">Services</button>
+    <button type="button" data-page="about" aria-pressed="false">About</button>
+    <button type="button" data-page="contact" aria-pressed="false">Contact</button>
+  </div>
+  <div class="seg" role="group" aria-label="View">
+    <button type="button" data-show="both" aria-pressed="true">Side by side</button>
+    <button type="button" data-show="a" aria-pressed="false">A only</button>
+    <button type="button" data-show="b" aria-pressed="false">B only</button>
+  </div>
+</div>
+
+<main class="stage" id="stage" data-show="both">
+  <section class="col col-a">
+    <header><span class="tag">A</span><strong>Stark editorial</strong><span>Black and white, red for actions</span><a id="open-a" href="a/index.html" target="_blank" rel="noopener">Open full page</a></header>
+    <iframe id="frame-a" src="a/index.html" title="Direction A preview"></iframe>
+  </section>
+  <section class="col col-b">
+    <header><span class="tag">B</span><strong>Warm and rounded</strong><span>Warm black, soft gold, rounded cards</span><a id="open-b" href="b/index.html" target="_blank" rel="noopener">Open full page</a></header>
+    <iframe id="frame-b" src="b/index.html" title="Direction B preview"></iframe>
+  </section>
+</main>
+<p class="note">Both directions use the same copy and the same service menu. Pick services on either Services page and they carry into that direction's intake. Nothing is sent: the intake and scheduling steps are mockups.</p>
+
+<script>
+(function () {
+  var stage = document.getElementById("stage");
+  var fa = document.getElementById("frame-a"), fb = document.getElementById("frame-b");
+  var oa = document.getElementById("open-a"), ob = document.getElementById("open-b");
+  function setPage(p) {
+    fa.src = "a/" + p + ".html"; fb.src = "b/" + p + ".html";
+    oa.href = fa.src; ob.href = fb.src;
+    document.querySelectorAll("[data-page]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-page") === p)); });
+    try { history.replaceState(null, "", "#" + p); } catch (e) {}
+  }
+  document.querySelectorAll("[data-page]").forEach(function (b) { b.addEventListener("click", function () { setPage(b.getAttribute("data-page")); }); });
+  document.querySelectorAll("[data-show]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      stage.setAttribute("data-show", b.getAttribute("data-show"));
+      document.querySelectorAll("button[data-show]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+    });
+  });
+  var start = (location.hash || "").slice(1);
+  if (["index", "services", "about", "contact"].indexOf(start) !== -1) setPage(start);
+})();
+</script>
